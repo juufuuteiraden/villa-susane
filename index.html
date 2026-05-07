@@ -4,130 +4,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Villa Susane | Your Tropical Escape in Balamban</title>
-    <!-- Correct Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Added actual Google Fonts -->
+    <!-- Optimized Font Imports -->
     <link href="https://googleapis.com" rel="stylesheet">
+    <!-- Animation Library -->
+    <link rel="stylesheet" href="https://cloudflare.com" />
+    
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .tropical-gradient { background: linear-gradient(135deg, #064e3b 0%, #059669 100%); }
+        .hero-zoom { animation: slowZoom 20s infinite alternate; }
+        @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.1); } }
+        .text-glow { text-shadow: 0 0 20px rgba(110, 231, 183, 0.3); }
     </style>
 </head>
 <body class="bg-[#FDFBF7] text-emerald-900 scroll-smooth">
 
     <!-- Hero Section -->
-    <header class="relative h-screen flex items-center justify-center text-center text-white">
-        <!-- Overlay for better text readability -->
-        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-[#FDFBF7] z-10"></div>
-        <!-- Real Placeholder Image -->
-        <img src="https://unsplash.com" 
-             class="absolute inset-0 w-full h-full object-cover" alt="Tropical Villa Pool">
-        
-        <div class="relative z-20 px-4 max-w-4xl">
-            <span class="uppercase tracking-[0.3em] text-sm mb-4 block text-emerald-200 font-semibold">Abucayan, Balamban</span>
-            <h1 class="text-6xl md:text-8xl mb-6 font-bold leading-tight">Escape to <span class="italic text-emerald-300">Paradise</span></h1>
-            <p class="text-xl md:text-2xl font-light mb-10 max-w-2xl mx-auto text-emerald-50/90">
-                Experience the tranquil "hidden gem" of Cebu. Secluded luxury meets nature's peace.
+    <header class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+        <!-- Parallax Background -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://unsplash.com" 
+                 class="w-full h-full object-cover hero-zoom" alt="Tropical Villa">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-[#FDFBF7] z-10"></div>
+        </div>
+
+        <div class="relative z-20 px-4 max-w-5xl" data-aos="fade-up" data-aos-duration="1500">
+            <span class="uppercase tracking-[0.5em] text-xs md:text-sm mb-6 block text-emerald-300 font-bold opacity-90">Abucayan, Balamban • Cebu</span>
+            <h1 class="text-5xl md:text-9xl mb-8 font-bold leading-tight text-glow">
+                Escape to <br><span class="italic text-emerald-400 font-normal">Paradise</span>
+            </h1>
+            <p class="text-lg md:text-2xl font-light mb-12 max-w-2xl mx-auto text-white/80 leading-relaxed">
+                A secluded sanctuary where the mountains meet the river. Discover the "hidden gem" of Balamban.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#booking" class="bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-full text-lg font-bold transition-all transform hover:scale-105 shadow-xl">Book Your Stay</a>
-                <a href="#features" class="glass px-10 py-4 rounded-full text-lg font-semibold hover:bg-white/20 transition-all">Explore Villa</a>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a href="#booking" class="group relative bg-orange-500 hover:bg-orange-600 text-white px-12 py-5 rounded-full text-lg font-bold transition-all shadow-2xl overflow-hidden">
+                    <span class="relative z-10">Book Your Stay</span>
+                    <div class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                </a>
+                <a href="#features" class="glass px-12 py-5 rounded-full text-lg font-semibold hover:bg-white/10 transition-all border border-white/30">
+                    Explore Villa
+                </a>
             </div>
+        </div>
+
+        <!-- Animated Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+            <div class="w-1 h-12 rounded-full bg-gradient-to-b from-emerald-400 to-transparent"></div>
         </div>
     </header>
 
     <!-- Features Section -->
     <section id="features" class="py-32 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-20">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4">Your Private Sanctuary</h2>
-            <div class="h-1 w-20 bg-orange-500 mx-auto"></div>
+        <div class="text-center mb-24" data-aos="fade-up">
+            <h2 class="text-5xl md:text-6xl font-bold mb-6">Your Private Sanctuary</h2>
+            <p class="text-emerald-800/50 max-w-lg mx-auto italic">Nature's peace, redefined in every detail.</p>
+            <div class="h-1.5 w-24 bg-orange-500 mx-auto mt-8 rounded-full"></div>
         </div>
         
-        <div class="grid md:grid-cols-3 gap-16">
-            <div class="group">
-                <div class="bg-emerald-50 w-20 h-20 rounded-2xl flex items-center justify-center text-4xl mb-6 group-hover:bg-emerald-100 transition-colors mx-auto">🌴</div>
-                <h3 class="text-2xl font-bold mb-3 text-center">Secluded Mountain View</h3>
-                <p class="text-emerald-800/70 leading-relaxed text-center">Tucked away in the lush mountains and river of Balamban for ultimate privacy and fresh air.</p>
+        <div class="grid md:grid-cols-3 gap-12">
+            <!-- Feature 1 -->
+            <div class="group p-10 bg-white rounded-[3rem] shadow-sm hover:shadow-2xl transition-all duration-500 border border-emerald-50" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-emerald-50 w-24 h-24 rounded-3xl flex items-center justify-center text-5xl mb-8 group-hover:rotate-12 transition-transform">🌴</div>
+                <h3 class="text-2xl font-bold mb-4">Mountain Views</h3>
+                <p class="text-emerald-800/70 leading-relaxed">Tucked away in the lush mountains and river of Balamban for ultimate privacy.</p>
             </div>
-            <div class="group">
-                <div class="bg-emerald-50 w-20 h-20 rounded-2xl flex items-center justify-center text-4xl mb-6 group-hover:bg-emerald-100 transition-colors mx-auto">🏊</div>
-                <h3 class="text-2xl font-bold mb-3 text-center">Refreshing Mini-Pool</h3>
-                <p class="text-emerald-800/70 leading-relaxed text-center">Perfect for couples, families, and barkadas looking to cool down under the tropical sun.</p>
+            <!-- Feature 2 -->
+            <div class="group p-10 bg-white rounded-[3rem] shadow-sm hover:shadow-2xl transition-all duration-500 border border-emerald-50" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-emerald-50 w-24 h-24 rounded-3xl flex items-center justify-center text-5xl mb-8 group-hover:rotate-12 transition-transform">🏊</div>
+                <h3 class="text-2xl font-bold mb-4">Mini-Pool</h3>
+                <p class="text-emerald-800/70 leading-relaxed">A refreshing crystal-clear pool perfect for families and romantic cooling down.</p>
             </div>
-            <div class="group">
-                <div class="bg-emerald-50 w-20 h-20 rounded-2xl flex items-center justify-center text-4xl mb-6 group-hover:bg-emerald-100 transition-colors mx-auto">✨</div>
-                <h3 class="text-2xl font-bold mb-3 text-center">Magical Tree Lights</h3>
-                <p class="text-emerald-800/70 leading-relaxed text-center">As the sun sets, our romantic tree lights create an unforgettable evening atmosphere for your stay.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action / Booking -->
-    <section id="booking" class="mx-6 mb-20 rounded-[3rem] overflow-hidden shadow-2xl">
-        <div class="tropical-gradient text-white py-24 px-6 text-center">
-            <h2 class="text-4xl md:text-6xl mb-6 font-bold">Ready for your getaway?</h2>
-            <p class="mb-12 text-emerald-50/80 max-w-2xl mx-auto text-lg italic">
-                "The perfect spot for team buildings, family escapades, or a quiet romantic retreat."
-            </p>
-            <div class="flex flex-col md:flex-row justify-center items-center gap-6">
-                <a href="tel:+639294799835" class="bg-white text-emerald-900 px-10 py-4 rounded-full font-bold shadow-lg hover:shadow-2xl transition-all">
-                   📞 Call 0929 479 9835
-                </a>
-                <a href="https://www.facebook.com/villasusane.roomsnvenue" target="_blank" 
-                   class="bg-emerald-800/40 border border-white/30 backdrop-blur-sm px-10 py-4 rounded-full font-bold hover:bg-white/10 transition-all flex items-center gap-2">
-                    Message on Facebook
-                </a>
+            <!-- Feature 3 -->
+            <div class="group p-10 bg-white rounded-[3rem] shadow-sm hover:shadow-2xl transition-all duration-500 border border-emerald-50" data-aos="fade-up" data-aos-delay="300">
+                <div class="bg-emerald-50 w-24 h-24 rounded-3xl flex items-center justify-center text-5xl mb-8 group-hover:rotate-12 transition-transform">✨</div>
+                <h3 class="text-2xl font-bold mb-4">Tree Lights</h3>
+                <p class="text-emerald-800/70 leading-relaxed">Evening magic with thousands of twinkling lights wrapped around ancient trees.</p>
             </div>
         </div>
     </section>
 
-    <footer class="pb-12 text-center text-emerald-800/40 text-sm tracking-widest uppercase">
-        <p>&copy; 2026 Villa Susane Balamban • Made with ❤️ in Cebu</p>
+    <!-- Combined Getaway & Booking Section -->
+    <section id="booking" class="px-6 mb-32">
+        <div class="max-w-7xl mx-auto">
+            <div class="tropical-gradient text-white py-32 px-6 text-center rounded-[4rem] shadow-3xl mb-[-100px] relative z-10" data-aos="zoom-in">
+                <h2 class="text-5xl md:text-7xl mb-8 font-bold">Ready for your getaway?</h2>
+                <p class="mb-12 text-emerald-50/80 max-w-2xl mx-auto text-xl italic font-light leading-relaxed">
+                    "The perfect spot for team buildings, family escapades, or a quiet romantic retreat."
+                </p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                    <a href="#book-form" class="bg-white text-emerald-900 px-12 py-5 rounded-full font-bold shadow-2xl hover:scale-105 transition-all">
+                        ✨ Reserve Your Dates
+                    </a>
+                    <a href="tel:+639294799835" class="glass px-12 py-5 rounded-full font-bold hover:bg-white/10 transition-all">
+                       📞 0929 479 9835
+                    </a>
+                </div>
+            </div>
+
+            <!-- The Form -->
+            <div id="book-form" class="max-w-4xl mx-auto bg-white pt-40 pb-20 px-8 md:px-20 rounded-[4rem] shadow-2xl border border-emerald-50" data-aos="fade-up">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4 text-emerald-900">Booking Request</h2>
+                    <p class="text-emerald-800/40">We will contact you within 24 hours to confirm.</p>
+                </div>
+                
+                <form action="https://formspree.io/f/mnjwzwlj" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-2">
+                        <label class="text-xs uppercase tracking-widest font-bold text-emerald-800/60 ml-2">Full Name</label>
+                        <input type="text" name="name" required placeholder="Juan Dela Cruz" 
+                               class="w-full p-5 rounded-2xl bg-[#FDFBF7] border-none focus:ring-2 focus:ring-orange-500 transition-all shadow-inner">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs uppercase tracking-widest font-bold text-emerald-800/60 ml-2">Contact Info</label>
+                        <input type="text" name="contact" required placeholder="Email or Phone" 
+                               class="w-full p-5 rounded-2xl bg-[#FDFBF7] border-none focus:ring-2 focus:ring-orange-500 transition-all shadow-inner">
+                    </div>
+                    <div class="md:col-span-2 space-y-2">
+                        <label class="text-xs uppercase tracking-widest font-bold text-emerald-800/60 ml-2">Venue / Room Type</label>
+                        <select name="type" class="w-full p-5 rounded-2xl bg-[#FDFBF7] border-none focus:ring-2 focus:ring-orange-500 shadow-inner appearance-none">
+                            <option>Standard Room (2-4 pax)</option>
+                            <option>Barkada Room (6-10 pax)</option>
+                            <option>Full Venue / Day Use</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2 space-y-2">
+                        <label class="text-xs uppercase tracking-widest font-bold text-emerald-800/60 ml-2">Preferred Dates & Requests</label>
+                        <textarea name="message" rows="4" placeholder="How many guests? What dates?" 
+                                  class="w-full p-5 rounded-2xl bg-[#FDFBF7] border-none focus:ring-2 focus:ring-orange-500 transition-all shadow-inner"></textarea>
+                    </div>
+                    <div class="md:col-span-2 mt-4">
+                        <button type="submit" class="w-full bg-emerald-900 text-white py-6 rounded-3xl font-bold text-xl hover:bg-orange-500 transition-all shadow-xl hover:shadow-orange-200">
+                            Confirm Booking Request
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pb-20 text-center">
+        <div class="h-px w-20 bg-emerald-100 mx-auto mb-12"></div>
+        <p class="text-emerald-800/20 text-xs tracking-[0.4em] uppercase">&copy; 2026 Villa Susane Balamban • Cebu, PH</p>
     </footer>
+
+    <!-- Scripts for Animations -->
+    <script src="https://cloudflare.com"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
 
 </body>
 </html>
-
-<!-- Booking Section -->
-<section id="book-now" class="py-20 bg-white px-6">
-    <div class="max-w-3xl mx-auto bg-[#FDFBF7] p-8 md:p-12 rounded-3xl shadow-lg border border-emerald-100">
-        <h2 class="text-3xl font-bold text-center mb-8">Reserve Your Stay</h2>
-        
-        <!-- Replace YOUR_FORM_ID with the ID from formspree.io -->
-        <form action="https://formspree.io/f/mnjwzwlj" method="POST" class="space-y-6">
-            <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                    <label class="block text-sm font-semibold mb-2">Full Name</label>
-                    <input type="text" name="name" required placeholder="Juan Dela Cruz" 
-                           class="w-full p-4 rounded-xl border border-emerald-100 focus:outline-none focus:ring-2 focus:ring-orange-500">
-                </div>
-                <div>
-                    <label class="block text-sm font-semibold mb-2">Email / Phone</label>
-                    <input type="text" name="contact" required placeholder="09123456789" 
-                           class="w-full p-4 rounded-xl border border-emerald-100 focus:outline-none focus:ring-2 focus:ring-orange-500">
-                </div>
-            </div>
-            
-            <div>
-                <label class="block text-sm font-semibold mb-2">Select Venue/Room</label>
-                <select name="type" class="w-full p-4 rounded-xl border border-emerald-100 focus:outline-none">
-                    <option>Standard Room</option>
-                    <option>Barkada Room</option>
-                    <option>Day Use Venue</option>
-                </select>
-            </div>
-
-            <div>
-                <label class="block text-sm font-semibold mb-2">Preferred Dates & Special Requests</label>
-                <textarea name="message" rows="4" placeholder="Check-in date and other details..." 
-                          class="w-full p-4 rounded-xl border border-emerald-100 focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
-            </div>
-
-            <button type="submit" class="w-full bg-orange-500 text-white py-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition-all shadow-md">
-                Send Booking Request
-            </button>
-        </form>
-    </div>
-</section>
