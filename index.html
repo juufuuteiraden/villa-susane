@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Villa Susane | Your Tropical Escape in Balamban</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Corrected Fonts & Libraries -->
     <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="https://cloudflare.com" />
+    
+    <!-- Swiper.js for Carousel -->
+    <link rel="stylesheet" href="https://jsdelivr.net" />
+    <script src="https://jsdelivr.net"></script>
     
     <style>
         body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
@@ -16,6 +22,10 @@
         .hero-zoom { animation: slowZoom 20s infinite alternate; }
         @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.1); } }
         .text-glow { text-shadow: 0 0 20px rgba(0, 0, 0, 0.4); }
+        
+        /* Custom Swiper Styles */
+        .swiper-pagination-bullet-active { background: #f97316 !important; }
+        .swiper-button-next, .swiper-button-prev { color: white !important; filter: drop-shadow(0 0 5px rgba(0,0,0,0.5)); }
     </style>
 </head>
 <body class="bg-[#FDFBF7] text-emerald-900 scroll-smooth">
@@ -34,30 +44,20 @@
     </nav>
 
     <!-- Hero Section -->
-    <!-- Hero Section -->
     <header class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
-        <!-- Parallax Background with your Pool Image -->
         <div class="absolute inset-0 z-0">
-            <!-- Ensure your image file is named pool-bg.jpg and is in the same folder -->
-            <img src="pool-bg.jpg" 
-                 class="w-full h-full object-cover hero-zoom brightness-50" alt="Tropical Villa Pool">
-            
-            <!-- HEAVY DARK OVERLAY FOR TEXT READABILITY -->
+            <img src="pool-bg.jpg" class="w-full h-full object-cover hero-zoom brightness-50" alt="Tropical Villa Pool">
             <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/40 to-[#FDFBF7] z-10"></div>
         </div>
 
         <div class="relative z-20 px-4 max-w-5xl" data-aos="fade-up" data-aos-duration="1500">
             <span class="uppercase tracking-[0.5em] text-xs md:text-sm mb-6 block text-emerald-300 font-bold opacity-100 drop-shadow-lg">Abucayan, Balamban • Cebu</span>
-            
-            <!-- Added drop-shadow-2xl to make letters pop against the water -->
             <h1 class="text-5xl md:text-9xl mb-8 font-bold leading-tight drop-shadow-2xl">
                 Escape to <br><span class="italic text-emerald-400 font-normal">Paradise</span>
             </h1>
-            
             <p class="text-lg md:text-2xl font-light mb-12 max-w-2xl mx-auto text-white leading-relaxed drop-shadow-lg">
                 A secluded sanctuary where the mountains meet the river. Discover the "hidden gem" of Balamban.
             </p>
-            
             <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <a href="#booking" class="bg-orange-500 hover:bg-orange-600 text-white px-12 py-5 rounded-full text-lg font-bold transition-all shadow-2xl transform hover:scale-105">
                     Book Your Stay
@@ -68,15 +68,12 @@
             </div>
         </div>
 
-        <!-- Animated Scroll Indicator -->
         <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
             <div class="w-1 h-12 rounded-full bg-gradient-to-b from-emerald-400 to-transparent"></div>
         </div>
     </header>
 
-
-
-    <!-- About Section -->
+    <!-- About Section with Carousel -->
     <section id="about" class="py-32 px-6 bg-white">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
             <div data-aos="fade-right">
@@ -90,8 +87,20 @@
                     <div><span class="block text-3xl font-bold">Fresh</span><span class="text-xs uppercase text-emerald-800/40 font-bold">Mountain Air</span></div>
                 </div>
             </div>
-            <div class="rounded-[3rem] overflow-hidden shadow-2xl" data-aos="fade-left">
-                <img src="https://unsplash.com" class="w-full h-[500px] object-cover">
+
+            <!-- Image Carousel -->
+            <div class="relative w-full rounded-[3rem] overflow-hidden shadow-2xl" data-aos="fade-left">
+                <div class="swiper aboutSwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Add your image names below. I've used pool-bg as a placeholder for now -->
+                        <div class="swiper-slide"><img src="pool-bg.jpg" class="w-full h-[500px] object-cover"></div>
+                        <div class="swiper-slide"><img src="pool-bg.jpg" class="w-full h-[500px] object-cover brightness-75"></div>
+                        <div class="swiper-slide"><img src="pool-bg.jpg" class="w-full h-[500px] object-cover brightness-50"></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -99,19 +108,19 @@
     <!-- Amenities/Features Section -->
     <section id="features" class="py-32 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-24" data-aos="fade-up">
-            <h2 class="text-5xl font-bold mb-6">Amenities</h2>
+            <h2 class="text-5xl font-bold mb-6 text-emerald-900">Amenities</h2>
             <div class="h-1.5 w-24 bg-orange-500 mx-auto rounded-full"></div>
         </div>
         <div class="grid md:grid-cols-3 gap-12 text-center">
             <div class="p-10 bg-white rounded-[3rem] shadow-sm hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="100">
                 <div class="text-5xl mb-6">🌴</div>
                 <h3 class="text-2xl font-bold mb-4">Mountain View</h3>
-                <p class="text-emerald-800/60">Lush greenery and river views for ultimate relaxation.</p>
+                <p class="text-emerald-800/60">Lush greenery and river views for relaxation.</p>
             </div>
             <div class="p-10 bg-white rounded-[3rem] shadow-sm hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="200">
                 <div class="text-5xl mb-6">🏊</div>
                 <h3 class="text-2xl font-bold mb-4">Mini-Pool</h3>
-                <p class="text-emerald-800/60">Perfect for cooling off under the tropical sun.</p>
+                <p class="text-emerald-800/60">Perfect for cooling off under the sun.</p>
             </div>
             <div class="p-10 bg-white rounded-[3rem] shadow-sm hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="300">
                 <div class="text-5xl mb-6">✨</div>
@@ -120,7 +129,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- Booking Section -->
     <section id="booking" class="px-6 pb-32">
@@ -149,61 +157,23 @@
         </div>
     </section>
 
-    <section id="location" class="py-32 px-6 bg-[#FDFBF7]">
-    <div class="max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-            <!-- Left Side: Text Details -->
-            <div data-aos="fade-right">
-                <span class="text-orange-500 font-bold uppercase tracking-widest text-sm">Getting Here</span>
-                <h2 class="text-5xl font-bold mt-4 mb-8 text-emerald-900">Visit Us in <span class="italic">Abucayan</span></h2>
-                
-                <div class="space-y-8">
-                    <div class="flex gap-6">
-                        <div class="text-3xl">📍</div>
-                        <div>
-                            <h4 class="font-bold text-emerald-900">Address</h4>
-                            <p class="text-emerald-800/60 leading-relaxed">Abucayan, Balamban, Cebu, Philippines</p>
-                            <p class="text-xs text-emerald-800/40 mt-1 uppercase tracking-widest">Near the Balamban River</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex gap-6">
-                        <div class="text-3xl">🚗</div>
-                        <div>
-                            <h4 class="font-bold text-emerald-900">Travel Time</h4>
-                            <p class="text-emerald-800/60 leading-relaxed">Approximately 1.5 to 2 hours from Cebu City via the Transcentral Highway (TCH).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="https://google.com" target="_blank" 
-                   class="inline-block mt-12 bg-emerald-900 text-white px-10 py-4 rounded-full font-bold hover:bg-orange-500 transition-all shadow-xl">
-                    Get Directions on Google Maps
-                </a>
-            </div>
-
-            <!-- Right Side: Interactive Map -->
-            <div class="rounded-[3rem] overflow-hidden shadow-2xl h-[500px] border-8 border-white" data-aos="fade-left">
-                <!-- Replace the 'q=' value with your exact Google Maps Plus Code or coordinates for precision -->
-                <iframe 
-                    src="https://google.com" 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0; filter: grayscale(1) contrast(1.2) opacity(0.9);" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-        </div>
-    </div>
-</section>
-
     <footer class="pb-12 text-center text-emerald-800/30 uppercase tracking-[0.3em] text-xs">
         &copy; 2026 Villa Susane Balamban
     </footer>
 
+    <!-- Initialize Scripts -->
     <script src="https://cloudflare.com"></script>
-    <script>AOS.init({ duration: 1000, once: true });</script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        var swiper = new Swiper(".aboutSwiper", {
+            loop: true,
+            autoplay: { delay: 4000, disableOnInteraction: false },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+            effect: "fade",
+            fadeEffect: { crossFade: true }
+        });
+    </script>
 </body>
 </html>
