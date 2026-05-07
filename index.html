@@ -89,3 +89,45 @@
 
 </body>
 </html>
+
+<!-- Booking Section -->
+<section id="book-now" class="py-20 bg-white px-6">
+    <div class="max-w-3xl mx-auto bg-[#FDFBF7] p-8 md:p-12 rounded-3xl shadow-lg border border-emerald-100">
+        <h2 class="text-3xl font-bold text-center mb-8">Reserve Your Stay</h2>
+        
+        <!-- Replace YOUR_FORM_ID with the ID from formspree.io -->
+        <form action="https://formspree.io/f/mnjwzwlj" method="POST" class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-sm font-semibold mb-2">Full Name</label>
+                    <input type="text" name="name" required placeholder="Juan Dela Cruz" 
+                           class="w-full p-4 rounded-xl border border-emerald-100 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-2">Email / Phone</label>
+                    <input type="text" name="contact" required placeholder="09123456789" 
+                           class="w-full p-4 rounded-xl border border-emerald-100 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                </div>
+            </div>
+            
+            <div>
+                <label class="block text-sm font-semibold mb-2">Select Venue/Room</label>
+                <select name="type" class="w-full p-4 rounded-xl border border-emerald-100 focus:outline-none">
+                    <option>Standard Room</option>
+                    <option>Barkada Room</option>
+                    <option>Day Use Venue</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="block text-sm font-semibold mb-2">Preferred Dates & Special Requests</label>
+                <textarea name="message" rows="4" placeholder="Check-in date and other details..." 
+                          class="w-full p-4 rounded-xl border border-emerald-100 focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-orange-500 text-white py-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition-all shadow-md">
+                Send Booking Request
+            </button>
+        </form>
+    </div>
+</section>
